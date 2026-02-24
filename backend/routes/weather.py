@@ -60,12 +60,13 @@ async def get_forecast(location: str):
 #endpoint 3 for fetching youtube videos
 @router.get("/youtube")
 async def get_youtube_videos(location: str):
+    _, _, name = await geocode(location)
     url = "https://www.googleapis.com/youtube/v3/search"
     params = {
         "part": "snippet",
-        "q": f'"{location}" city travel guide',
+        "q": f"{name} travel guide",
         "type": "video",
-        "maxResults": 3,
+        "maxResults": 6,
         "key": YT_KEY,
         "relevanceLanguage": "en",
         "order": "relevance",
