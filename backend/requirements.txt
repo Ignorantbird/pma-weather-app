@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-dotenv
+httpx
+supabase
+fpdf2
+pandas
+python-multipart
